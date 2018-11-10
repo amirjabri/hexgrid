@@ -29,19 +29,35 @@ print(hex)
 hex = hexlist[13]
 print(hex)
 
-
+moveOne = ((1,1),(0,2),(-1,1),(-1,-1),(0,-2),(1,-1))
+'''def getindex(x,y,dir):
+    for i in range(len(hexlist)):
+        if '''
 
 #prototype for pulling list of hex you need and then moving a character from that hex list to an adjacent list.
 # want to move character one hex from x=1, y=3 in the up right direction (moveOne[5])
 print('character is @ hex 1,3 and will move up right direction')
-'''
-for x in range(8):
-    for y in range(12):
-        if
+
+for a in range(len(hexlist)):
+    hex = hexlist[a]
+    if hex[2]== '@':
+    	position = hex[0:2]
+    	hex[2] = 0
+    	hexlist[a] = hex
+    	move = moveOne[5]
+	newposition = [0,0]
+    	newposition[0] = position[0] + move[0]
+    	newposition[1] = position[1] + move[1]
+    	hexindex = newposition[0]*6 + (newposition[1]/2)
+    	newhex = hexlist[hexindex]
+    	newhex[2] = '@'
+    	hexlist[hexindex] = newhex
+print(hexlist)    
+    
 print('print x, y from the list')
-'''
+
 #dr,d,dl,ul,u,ur
-moveOne = ((1,1),(0,2),(-1,1),(-1,-1),(0,-2),(1,-1))
-print(moveOne)
+#moveOne = ((1,1),(0,2),(-1,1),(-1,-1),(0,-2),(1,-1))
+#print(moveOne)
 
 
