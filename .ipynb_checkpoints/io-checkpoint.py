@@ -10,9 +10,5 @@ output = hexmap.read().splitlines()
 print(output)
 for i in range(len(output)):
     print(output[i])
-def insert_sequence(str1, str2, int):        
-	str1_split1 = str1[:int]
-	str1_split2 = str1[int:]
-	new_string = str1_split1 + str2 + str1_split2
-        return new_string
+
 
