@@ -17,7 +17,29 @@ while x <= 7:
 			hexlist.append([x,y,0,0,0])
 			y+=2
 	x+=1
+
+
 print(hexlist)
+testXY = [1,3]
+print(testXY)
+
+def findIndeXY(list):
+	for i in range(len(hexlist)):
+		if list == hexlist[i][0:2]:
+			print(i)
+
+findIndeXY(testXY)
+
+def moveNewXY(x,y,dirIndex):
+    
+    dirList = ((1,1),(0,2),(-1,1),(-1,-1),(0,-2),(1,-1))
+    print(dirList[dirIndex])
+    print(dirList[dirIndex][0] + x)
+    print(dirList[dirIndex][1] + y)
+
+moveNewXY(1,3,5)
+    
+'''
 hex = hexlist[7]
 print(hex)
 
@@ -28,12 +50,10 @@ print(hexlist)
 print(hex)
 hex = hexlist[13]
 print(hex)
-
 moveOne = ((1,1),(0,2),(-1,1),(-1,-1),(0,-2),(1,-1))
-'''def getindex(x,y,dir):
+def getindex(x,y,dir):
     for i in range(len(hexlist)):
-        if '''
-
+        if 
 #prototype for pulling list of hex you need and then moving a character from that hex list to an adjacent list.
 # want to move character one hex from x=1, y=3 in the up right direction (moveOne[5])
 print('character is @ hex 1,3 and will move up right direction')
@@ -59,5 +79,5 @@ print('print x, y from the list')
 #dr,d,dl,ul,u,ur
 #moveOne = ((1,1),(0,2),(-1,1),(-1,-1),(0,-2),(1,-1))
 #print(moveOne)
-
+'''
 
