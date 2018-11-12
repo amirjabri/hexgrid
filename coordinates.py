@@ -1,83 +1,57 @@
 #playing with coordinates
 # x,y x=colums , y = rows , a=terrain, b=resource,c=characters on hex
 #  create list of lists
-hexlist =[]
-x=0
 
-while x <= 7:
+
+#hexagon list plus other contents
+def generateHexList(x,y):
+        hexList=[]
+        for x in range(8):
 	
-	if x==0 or x%2==0:
-		y=0
-		while y <= 10:
-			hexlist.append([x,y,0,0,0]) 
-			y+=2
-	if x%2==1:
-		y=1
-		while y < 12:
-			hexlist.append([x,y,0,0,0])
-			y+=2
-	x+=1
+	        if x==0 or x%2==0:
+		        y=0
+		        while y <= 10:
+			        hexList.append([x,y,0,0,0,0,0]) 
+			        y+=2
+	        if x%2==1:
+		        y=1
+		        while y < 12:
+			        hexList.append([x,y,0,0,0,0,0])
+			        y+=2
+        return hexList
+
+Hex1 = generateHexList(8,12)
+print(Hex1)
+
+#setup characters
 
 
-print(hexlist)
-testXY = [1,3]
-print(testXY)
+def getIndexFromXY(list):
+	for i in range(len(hexList)):
+		if list == hexList[i][0:2]:
+			return i
 
-def findIndeXY(list):
-	for i in range(len(hexlist)):
-		if list == hexlist[i][0:2]:
-			print(i)
+def indexFromChar(char,list):
+	for i in range(len(list)):
+    		if char == list[i][2]:
+        		return i
+def addXY(vec1,vec2):
+    	vec3 = [vec1[0] + vec2[0], vec1[1] + vec2[1]]
+    	return vec3
 
-findIndeXY(testXY)
+#check moves and get neighbor hex
+#    
 
-def moveNewXY(x,y,dirIndex):
+def moveCharDir(char,list, dir):
     
-    dirList = ((1,1),(0,2),(-1,1),(-1,-1),(0,-2),(1,-1))
-    print(dirList[dirIndex])
-    print(dirList[dirIndex][0] + x)
-    print(dirList[dirIndex][1] + y)
+	dirList = ((1,1),(0,2),(-1,1),(-1,-1),(0,-2),(1,-1))
 
-moveNewXY(1,3,5)
-    
-'''
-hex = hexlist[7]
-print(hex)
+	oldIndex = indexFromChar(char,list)
+	
+	hexList[oldIndex][2] = 0
+	hexList[getIndexFromXY(addXY(hexList[oldIndex][0:2], dirList[dir]))][2] = char
+	
+	
 
-hex[2] = '@'
-print(hex)
-hexlist[7] = hex
-print(hexlist)
-print(hex)
-hex = hexlist[13]
-print(hex)
-moveOne = ((1,1),(0,2),(-1,1),(-1,-1),(0,-2),(1,-1))
-def getindex(x,y,dir):
-    for i in range(len(hexlist)):
-        if 
-#prototype for pulling list of hex you need and then moving a character from that hex list to an adjacent list.
-# want to move character one hex from x=1, y=3 in the up right direction (moveOne[5])
-print('character is @ hex 1,3 and will move up right direction')
 
-for a in range(len(hexlist)):
-    hex = hexlist[a]
-    if hex[2]== '@':
-    	position = hex[0:2]
-    	hex[2] = 0
-    	hexlist[a] = hex
-    	move = moveOne[5]
-	newposition = [0,0]
-    	newposition[0] = position[0] + move[0]
-    	newposition[1] = position[1] + move[1]
-    	hexindex = newposition[0]*6 + (newposition[1]/2)
-    	newhex = hexlist[hexindex]
-    	newhex[2] = '@'
-    	hexlist[hexindex] = newhex
-print(hexlist)    
-    
-print('print x, y from the list')
-
-#dr,d,dl,ul,u,ur
-#moveOne = ((1,1),(0,2),(-1,1),(-1,-1),(0,-2),(1,-1))
-#print(moveOne)
-'''
 
