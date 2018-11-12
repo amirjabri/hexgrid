@@ -1,0 +1,1 @@
+fix hex grid generator to size properly to match map I made, then finish dictionary for hash table converting the hex list coordinates to the map graphical text spacings for inserting the drawings properly

@@ -1,10 +1,4 @@
-#playing with coordinates
-# x,y x=colums , y = rows , a=terrain, b=resource,c=characters on hex
-#  create list of lists
-
-
-#hexagon list plus other contents
-def generateHexList(x,y):
+def generateHexList():
         hexList=[]
         for x in range(8):
 	
@@ -20,15 +14,12 @@ def generateHexList(x,y):
 			        y+=2
         return hexList
 
-Hex1 = generateHexList(8,12)
-print(Hex1)
-
-#setup characters
 
 
-def getIndexFromXY(list):
-	for i in range(len(hexList)):
-		if list == hexList[i][0:2]:
+
+def getIndexFromXY(list1, list2):
+	for i in range(len(list2)):
+		if list1 == list2[i][0:2]:
 			return i
 
 def indexFromChar(char,list):
@@ -38,20 +29,12 @@ def indexFromChar(char,list):
 def addXY(vec1,vec2):
     	vec3 = [vec1[0] + vec2[0], vec1[1] + vec2[1]]
     	return vec3
-
-#check moves and get neighbor hex
-#    
-
+def getXYfromIndex(list,i):
+    return list[1][0,2]
 def moveCharDir(char,list, dir):
     
 	dirList = ((1,1),(0,2),(-1,1),(-1,-1),(0,-2),(1,-1))
-
 	oldIndex = indexFromChar(char,list)
-	
-	hexList[oldIndex][2] = 0
-	hexList[getIndexFromXY(addXY(hexList[oldIndex][0:2], dirList[dir]))][2] = char
-	
-	
-
-
-
+	list[oldIndex][2] = 0
+	list[getIndexFromXY(addXY(list[oldIndex][0:2], dirList[dir]),list)][2] = char
+        return list
