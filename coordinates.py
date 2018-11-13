@@ -1,18 +1,19 @@
 def generateHexList():
-        hexList=[]
-        x = 0
-        while x <= 8:
-	        if x==0 or x%2==0:
-		        y=0
-		        while y <= 10:
-			        hexList.append([x,y,0,0,0,0,0]) 
-			        y+=2
-	        if x%2==1:
-		        y=1
-		        while y < 12:
-			        hexList.append([x,y,0,0,0,0,0])
-			        y+=2
-        return hexList
+	hexList=[] 
+	x=0
+	while x < 8:
+		if x==0 or x%2==0:
+			y=0
+			while y <= 10:
+				hexList.append([x,y,0,0,0,0,0]) 
+				y+=2
+		if x%2==1:
+			y=1
+			while y < 12:
+				hexList.append([x,y,0,0,0,0,0])
+				y+=2
+		x+=1
+	return hexList
 
 def getIndexFromXY(list1, list2):
 	for i in range(len(list2)):
