@@ -1,5 +1,5 @@
 import coordinates as cd
-import io
+import inout as io
 #import io engine and other stuff
 
 hexList =[]
@@ -11,7 +11,7 @@ hexList[7][2] = '@'
 #print(hexList)
 updatedHexList = cd.moveCharDir('@', hexList, 0)
 
-plainMapList = io.generatePlainMapList()
+plainMapList = io.genMapList()
 
 updatedMapList = io.updateMap(updatedHexList, plainMapList, '@')
 
