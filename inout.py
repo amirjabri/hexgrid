@@ -1,8 +1,5 @@
 import coordinates as cd
-'''
-grid spaces: x=e5,o12,e19,o26,e33,o40,e47,o54, 
-yeven=3,7,11,15,19,23 yodd=5,9,13,17,21,25
-'''
+
 hexToMap = {(0,0):(5,3), (0,2):(5,7), (0,4):(5,11), (0,6):(5,15), (0,8):(5,19), (0,10):(5,23),
 	    (1,1):(12,5),(1,3):(12,9),(1,5):(12,13),(1,7):(12,17),(1,9):(12,21),(1,11):(12,25),
 	    (2,0):(19,3),(2,2):(19,7),(2,4):(19,11),(2,6):(19,15),(2,8):(19,19),(2,10):(19,23),
@@ -26,8 +23,8 @@ def insertChar(str, char, x):
         return str[:x-1] + char + str[x:] 
 
 def updateMap(hexList, plainMap, char):
-        xy = cd.getXYfromIndex[cd.indexFromChar(hexList, char)]
-        
-
-
-
+        mapXY = hexToMap[cd.getXYfromIndex[cd.indexFromChar(hexList, char)]]
+        newMap = plainMap
+        newMap[mapXY[1]]= insertChar(mapXY[1],'@',mapXY[0])
+        return newMap
+        printMap(newMap)

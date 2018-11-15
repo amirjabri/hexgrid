@@ -15,7 +15,7 @@ plainMapList = io.genMapList()
 
 updatedMapList = io.updateMap(updatedHexList, plainMapList, '@')
 
-io.printMap(updatedMapList)
+io.updateMap(hexList,plainMap,'@')
 
 
 
