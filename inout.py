@@ -23,9 +23,15 @@ def printMap(list):
         for i in range(len(list)):
                 print(list[i])
 
-def insertChar(str, char, x):        
-        return str[:x-1] + char + str[x:] 
+def insertChar(lineToEdit, asciiChar, asciiPos):        
+        return lineToEdit[:asciiPos-1] + asciiChar + lineToEdit[asciiPos:] 
 #need to update map with character inserted in the correct position. get xy of character from before and use hash table to get
 # corresponding value on the printed ascii map, then insert in that x,y value using string in the list index.
-def updateMap(mapList, symbol, charXY):
-        mapList[charXY[1]] = insertChar(mapList[charXY[1]],symbol, charXY[0])
+
+def updateMap(mapList, charObj):
+	rowIndexToEdit = hexToMap[tuple(charObj.xy)][1]
+	lineToEdit = mapList[rowIndexToEdit]
+	asciiPositionToInsert = hexToMap[tuple(charObj.xy)][0]
+	newLine = insertChar(lineToEdit, charObj.symbol, asciiPositionToInsert)
+	mapList[rowIndexToEdit]=newLine
+

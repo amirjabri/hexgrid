@@ -4,27 +4,27 @@ import characterItem as ci
 
 #import io engine and other stuff
 #
-hexList = cd.generateHexList(6,8) #eventually arbitrary size grid could be added
-print(hexList)
+hexList = cd.generateHexList(6,8)
+#print(hexList)
 
-char1 = ci.charClass('@',3,1)
-print(char1.symbol)
-print(char1.x)
-print(char1.y)
+char1 = ci.charClass('@',[2,2])
+#print(char1.symbol)
+#print(char1.xy)
 
-char1.updateXY(2,2)
+char1.updateXY([3,3])
+#print(char1.xy)
 
-print(char1.x)
-print(char1.y)
+char1.updateXY(cd.newCharXY(char1,0))
+#print(char1.xy)
 
-char1New = cd.newCharXY(char1,0)
-print(char1New)
 mapList1 = io.genMapList()
-io.printMap(mapList1)
-io.updateMap(mapList1, '@', char1New)
-io.printMap(mapList1)
-z = 0
+#io.printMap(mapList1)
+#print(io.hexToMap[tuple(char1.xy)])
 
+io.updateMap(mapList1, char1)
+io.printMap(mapList1)
+
+'''
 while z < 10:
 	print('which dir')
 	dir = int(input())
@@ -33,7 +33,7 @@ while z < 10:
 	io.printMap(mapList1)
 	z+=1
 
-'''
+
 hexList[7][2] = '@'
 #print(hexList)
 updatedHexList = cd.moveCharDir('@', hexList, 0)
@@ -50,4 +50,4 @@ io.updateMap(hexList,plainMap,'@')
 '''
 
 #io.printMap(plainMapList)
-# def class main loop
+# main game loop class

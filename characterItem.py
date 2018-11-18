@@ -1,11 +1,9 @@
 #define class for characters
 
 class charClass:
-	def __init__(self,symbol, x, y):
+	def __init__(self,symbol, xy):
         	self.symbol = symbol
-        	self.x = x
-        	self.y = y
-
-	def updateXY(self,newX,newY):
-		self.x = newX
-		self.y = newY
+        	self.xy = xy
+        	
+	def updateXY(self,newXY):
+		self.xy = newXY

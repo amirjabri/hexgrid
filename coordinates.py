@@ -26,5 +26,5 @@ def getIndexFromXY(hexCoordList, XY):
 def calcNewXY(vec1,vec2):
 	return [vec1[0] + vec2[0], vec1[1] + vec2[1]]
 
-def newCharXY(char, direction):
-	return calcNewXY([char.x,char.y],dirList[direction])
+def newCharXY(charObj, direction):
+	return calcNewXY(charObj.xy,dirList[direction])
