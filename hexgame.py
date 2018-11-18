@@ -21,33 +21,20 @@ mapList1 = io.genMapList()
 #io.printMap(mapList1)
 #print(io.hexToMap[tuple(char1.xy)])
 
-io.updateMap(mapList1, char1)
-io.printMap(mapList1)
 
-'''
-while z < 10:
+
+
+turn=0
+while turn < 10:
+	#print(chr(27) + "[2J")
 	print('which dir')
 	dir = int(input())
-	char1New = cd.newCharXY(char1,dir)
-	io.updateMap(mapList1, '@', char1New)
+	char1.xy = cd.newCharXY(char1,dir)
+	io.updateMap(mapList1, char1)
 	io.printMap(mapList1)
-	z+=1
+	print('next turn press 1')
+	next = input()
+	print(chr(27) + "[2J")
+	turn+=1
 
-
-hexList[7][2] = '@'
-#print(hexList)
-updatedHexList = cd.moveCharDir('@', hexList, 0)
-
-plainMapList = io.genMapList()
-print(plainMapList)
-print(plainMapList[2])
-print(plainMapList[6])
-print(plainMapList[10])
-updatedMapList = io.updateMap(updatedHexList, plainMapList, '@')
-
-io.updateMap(hexList,plainMap,'@')
-
-'''
-
-#io.printMap(plainMapList)
-# main game loop class
+# main game loop class spit out txt file for map for each turn.
