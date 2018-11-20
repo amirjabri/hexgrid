@@ -1,7 +1,7 @@
 import characterItem as ci
 
 dirList = ((1,1),(0,2),(-1,1),(-1,-1),(0,-2),(1,-1))
-
+#generate coordinates for rectangular shape
 def generateHexList(height,width):
 	hexList=[] 
 	x = 0
@@ -18,7 +18,7 @@ def generateHexList(height,width):
 				y+=2
 		x+=1
 	return hexList
-
+#to do: generate coordinates for other shapes.
 def getIndexFromXY(hexCoordList, XY):
 	for i in range(len(hexCoordList)):
 		if XY == hexCoordList[i][0:2]:

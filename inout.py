@@ -4,6 +4,7 @@ import coordinates as cd
 #that way any arbitrary hex shape can be defined and created along
 #with hash table for manipulations or potentially from the parameters
 #needed to describe the creation of the hex grid.
+
 hexToMap = {(0,0):(5,2), (0,2):(5,6), (0,4):(5,10), (0,6):(5,14), (0,8):(5,18), (0,10):(5,22),
 	    (1,1):(12,4),(1,3):(12,8),(1,5):(12,12),(1,7):(12,16),(1,9):(12,20),(1,11):(12,24),
 	    (2,0):(19,2),(2,2):(19,6),(2,4):(19,10),(2,6):(19,14),(2,8):(19,18),(2,10):(19,22),
@@ -29,9 +30,10 @@ def insertChar(lineToEdit, asciiChar, asciiPos):
 # corresponding value on the printed ascii map, then insert in that x,y value using string in the list index.
 
 def updateMap(mapList, charObj):
+	#mapList = genMapList()
 	rowIndexToEdit = hexToMap[tuple(charObj.xy)][1]
 	lineToEdit = mapList[rowIndexToEdit]
 	asciiPositionToInsert = hexToMap[tuple(charObj.xy)][0]
 	newLine = insertChar(lineToEdit, charObj.symbol, asciiPositionToInsert)
 	mapList[rowIndexToEdit]=newLine
-
+	return mapList
