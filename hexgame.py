@@ -6,7 +6,7 @@ import characterItem as ci
 #
 hexList = cd.generateHexList(6,8)
 
-char1 = ci.charClass('@',[2,2])
+char1 = ci.charClass('@',[2,2], [],[])
 
 for i in range(100):
 	print('which dir')
