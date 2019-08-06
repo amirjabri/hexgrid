@@ -15,4 +15,4 @@ for i in range(100):
     print(chr(27) + "[2J")
     io.printMap(io.updateMap(io.genMapList(), char1))
 
-# eventually planning for  main game loop class spit out txt file for map for each turn.
+# planning for main game loop class spit out txt file for map on turn.
