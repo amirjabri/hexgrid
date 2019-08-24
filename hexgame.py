@@ -1,18 +1,18 @@
 import coordinates as cd
 import inout as io
-import characterItem as ci
+import char_item as ci
 
 # import io engine and other stuff
 
 hexList = cd.generateHexList(6, 8)
 
-char1 = ci.charClass('@', [2, 2], [], [])
+Char1 = ci.charClass('@', [2, 2], [], [])
 
 for i in range(100):
     print('which dir')
     dir = int(input())
-    char1.xy = cd.newCharXY(char1, dir)
+    Char1.xy = cd.newCharXY(Char1, dir)
     print(chr(27) + "[2J")
-    io.printMap(io.updateMap(io.genMapList(), char1))
+    io.printMap(io.updateMap(io.genMapList(), Char1))
 
 # planning for main game loop class spit out txt file for map on turn.
