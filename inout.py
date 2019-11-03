@@ -31,9 +31,9 @@ def insertChar(lineToEdit, asciiChar, asciiPos):
 
 def updateMap(mapList, charObj):
 	#mapList = genMapList()
-	rowIndexToEdit = hexToMap[tuple(charObj.xy)][1]
+	rowIndexToEdit = hexToMap[tuple(charObj.char_coords)][1]
 	lineToEdit = mapList[rowIndexToEdit]
-	asciiPositionToInsert = hexToMap[tuple(charObj.xy)][0]
-	newLine = insertChar(lineToEdit, charObj.symbol, asciiPositionToInsert)
+	asciiPositionToInsert = hexToMap[tuple(charObj.char_coords)][0]
+	newLine = insertChar(lineToEdit, charObj.char_symbol, asciiPositionToInsert)
 	mapList[rowIndexToEdit]=newLine
 	return mapList
