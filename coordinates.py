@@ -1,4 +1,4 @@
-import characterItem as ci
+import char_item as ci
 
 dirList = ((1, 1), (0, 2), (-1, 1), (-1, -1), (0, -2), (1, -1))
 # generate coordinates for rectangular shape
@@ -14,7 +14,7 @@ def generateHexList(height, width):
             while y <= (height*2-1):
                 hexList.append([x, y])
                 y += 2
-            if x % 2 == 1:
+        if x % 2 == 1:
 
             y = 1
 
@@ -37,4 +37,4 @@ def calcNewXY(vec1, vec2):
 
 
 def newCharXY(charObj, direction):
-    return calcNewXY(charObj.xy, dirList[direction])
+    return calcNewXY(charObj.char_coords, dirList[direction])

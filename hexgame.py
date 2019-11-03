@@ -6,12 +6,12 @@ import char_item as ci
 
 hexList = cd.generateHexList(6, 8)
 
-Char1 = ci.charClass('@', [2, 2], [], [])
+Char1 = ci.charClass('@', [2, 2], [])
 
 for i in range(100):
     print('which dir')
     dir = int(input())
-    Char1.xy = cd.newCharXY(Char1, dir)
+    Char1.char_coords = cd.newCharXY(Char1, dir)
     print(chr(27) + "[2J")
     io.printMap(io.updateMap(io.genMapList(), Char1))
 
